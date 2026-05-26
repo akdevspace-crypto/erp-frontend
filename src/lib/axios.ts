@@ -15,7 +15,7 @@ const isAuthDebugEnabled = () => import.meta.env.VITE_AUTH_DEBUG === 'true'
 let isRedirectingToLogin = false
 
 const getApiBaseUrl = () => {
-    const configuredUrl = import.meta.env.VITE_API_URL || 'https://qsfrdt4j-4000.inc1.devtunnels.ms/api/v1'
+    const configuredUrl = import.meta.env.VITE_API_URL || 'https://backend-erp-jp2x.onrender.com/api/v1'
 
     if (typeof window === 'undefined') {
         return configuredUrl
