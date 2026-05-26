@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Interpolated from #00b3a7 base for soft structural highlights */
+  --color-primary-50: #e0f8f6;
+  --color-primary-100: #ccf3ef;
+  --color-primary-200: #a3e7e1;
+  --color-primary-300: #70d6cd;
+  --color-primary-400: #42bfb5;
+  --color-primary-500: #00b3a7;
+  --color-primary-600: #009088;
+  --color-primary-700: #00736d;
+  --color-primary-800: #005a56;
+  --color-primary-900: #004644;
+
+  --color-accent: #ffce75;
+  --color-success: #a0d6b4;
+  --color-surface: #ffffff;
+  --color-border: #d9d9d9;
+
+  --color-surface-dark: #000000;
+  --color-border-dark: #1e1e1e;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: #f7f9fb;
+    color: black;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .dark body {
+    background-color: black;
+    color: #f3f4f6;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    body {
+      font-size: 13px;
+    }
+
+    /* Ensure touch targets are at least 44px */
+    button, [role="button"], input, select, textarea {
+      min-height: 44px;
+    }
+
+    /* Better text readability on mobile */
+    h1, h2, h3, h4, h5, h6 {
+      line-height: 1.3;
+    }
+  }
+}
